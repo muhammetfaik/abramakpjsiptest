@@ -30,18 +30,18 @@ int main()
     std::cout << "*** PJSUA2 STARTED ***" << std::endl;
 
     // Configure an AccountConfig
-    //AccountConfig acfg;
-    //acfg.idUri = "sip:muhammetfaik@192.168.1.106";
-    //acfg.regConfig.registrarUri = "sip:192.168.1.106";
-    //acfg.sipConfig.proxies = { "sip:<Outbound Proxy>" };
-    //AuthCredInfo cred("digest", "*", "<Authorization ID>", 0, "<password>");
-    //acfg.sipConfig.authCreds.push_back( cred );
+    AccountConfig acfg;
+    acfg.idUri = "sip:muhammetfaik@192.168.1.106";
+    acfg.regConfig.registrarUri = "sip:192.168.1.106";
+    acfg.sipConfig.proxies = { "sip:<Outbound Proxy>" };
+    AuthCredInfo cred("digest", "*", "<Authorization ID>", 0, "<password>");
+    acfg.sipConfig.authCreds.push_back( cred );
 
-    //MyAccount *acc = new MyAccount;
-    //acc->create(acfg);
+    MyAccount *acc = new MyAccount;
+    acc->create(acfg);
 
 
-    //pj_thread_sleep(300000);
-    //delete acc;
-    //return 0;
+    pj_thread_sleep(300000);
+    delete acc;
+    return 0;
 }
